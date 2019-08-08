@@ -14,8 +14,9 @@ AddNewUser
 AddInvalidUser
     As a user, when I browse the application
     I register a new user
-    When I enter the user details:    honey    mishra    cxcv    testmobile    alternateNumber    Global Logic
-    ...    1    6411641C-F93C-4923-8D28-21FD0F36ADD6    1    1    12225    cp
+    When I enter the user details:    honey    mishra    cxcv    testmobile    alternateNumber    1
+    ...    1    6411641C-F93C-4923-8D28-21FD0F36ADD6    102    1    12225    cp
+    ...    hfghgf
     And Click on Submit Button
     #Then user details should not gets saved successfully.
 
