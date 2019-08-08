@@ -1,0 +1,38 @@
+*** Settings ***
+Library           SeleniumLibrary
+
+*** Variables ***
+${url}            http://localhost:50439/bussinesscard/    # ok
+
+*** Keywords ***
+As a user, when I browse the application
+    SeleniumLibrary.Open Browser    ${url}    chrome
+
+I register a new user
+    Click Link    Add
+    Sleep    2
+
+When I enter the user details:
+    [Arguments]    ${firstName}    ${lastName}    ${emailId}    ${mobileNumber}    ${alternateNumber}    ${organisationName}
+    ...    ${positionName}    ${addressType}    ${country}    ${state}    ${pincode}    ${street1}
+    ...    ${street2}
+    Input Text    id= firstName    ${firstName}
+    Input Text    name= lastName    ${lastName}
+    Input Text    id=emailId    ${emailId}
+    Input Text    id=mobileNumber    ${mobileNumber}
+    Input Text    id=alternateNumber    ${alternateNumber}
+    Select From List By Value    id=organisationName    ${organisationName}
+    Select From List By Value    id=positionName    ${positionName}
+    Select From List By Value    id=addressType    ${addressType}
+    Select From List By Value    id=country    ${country}
+    Select From List By Value    id=state    ${state}
+    Input Text    id=pincode    ${pincode}
+    Input Text    id=street1    ${street1}
+    Input Text    id=street2    ${street2}
+    Sleep    1
+
+And Click on Submit Button
+    Click Button    id=btnSubmit
+
+And Click on Cancel Button
+    Click Link    Cancel
