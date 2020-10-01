@@ -1,5 +1,5 @@
 *** Settings ***
-Resource          ../../Users/honey.mishra/Desktop/Resource.txt
+Resource          ../Resource.txt
 
 *** Test Cases ***
 AddNewUser
